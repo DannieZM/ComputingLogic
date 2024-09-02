@@ -1,0 +1,11 @@
+    Start
+        INPUT refridgeModelName
+        INPUT heightinch
+        INPUT widthinch
+        INPUT depthinch
+
+        name = refridgeModelName
+        capacity = (heightinch * widthinch * depthinch)/1728
+
+        print name + capacity + " in cubic feet"
+    End
