@@ -1,0 +1,34 @@
+start
+    add_ins[5]=["whipped cream", "cinnamon", "chocolate sauce", "amaretto", "irish whiskey"]
+    price[5]=[0.89, 0.25, 0.59, 1.50, 1.75]
+    sentinel = "No more"
+    total= 0.0
+    Standard = 2.0 
+    while true
+        output "Please enter your add-ins or type No more if finish: "
+        input user_input
+
+        if user_input == sentinel
+            break
+        endif
+    avaiable = false
+
+    for i from 0 to amount(add_ins)-1
+        if user_input == add_ins[i]
+            output "The price for", user_input, ": $", price[i]
+            total = total + price[i]
+            avaiable = true
+        endif
+    end for
+
+    if not avaiable
+        output "Sorry, item is not available"
+    endif
+endwhile
+
+
+    output "The total price for your order is: $", total + Standard
+
+
+
+end
