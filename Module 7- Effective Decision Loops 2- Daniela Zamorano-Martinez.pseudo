@@ -1,0 +1,39 @@
+start
+ output ("Please enter the years left in your career: ")
+ input years
+ 
+ output ("Please enter the annual savings: ")
+ input salary
+
+ total_savings = years * salary + (years * salary * .03 * years/2)
+
+assume_fund = 60000/.03
+
+    if total_savings < assume_fund
+        output ("Total savings" ($", total_savings, ") is less the retirement funds)
+    endif
+    
+    balance = total_savings
+
+    for years 1 to 30
+        if balance <= 0 
+            output ("Your balance will be at $0 in year: "), year -1
+        endif
+
+        balance = balance * .03
+        balance = balance - 60000
+
+        output ("Your balance in", year, ": $,", balance)
+    endfor
+
+    output ("Would you like to make a change?" ("Yes or No"))
+    input Choice
+
+        if choice != "yes"
+        endif
+
+
+    
+
+
+end

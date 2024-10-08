@@ -1,0 +1,14 @@
+start
+    user_input = -1
+    total_sum = 0
+
+    while user_input!= 0
+     print "Please enter a number, if you wish to stop please enter 0 : "
+        if user_input != 0 then
+            total_sum = total_sum + user_input
+        endif   
+    endwhile
+
+    print "The total sum of all entered numbers is: ", total_sum
+
+End
