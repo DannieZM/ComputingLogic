@@ -1,0 +1,42 @@
+Begin
+    declare Geraldine_file
+    declare Gerard_file
+    declare merge_file
+    declare uniq_customer
+
+    open Geraldine_file for Read
+    open Gerard_file for Read
+    open merge_file for Write
+
+    while not end of Geraldine_file
+        Read record from Geraldine_file
+        cust_name = record.customer_number
+        L_name = record.last_name
+        address = record.address
+        prop_size = record.property_size
+
+        if cust_name != uniq_customer
+            add cust_name to uniq_customer
+            Write record to merge_file
+        endif
+    endwhile
+
+    while not end of Gerard_file
+        Read record from Gerard_file
+        cust_name = record.customer_number
+        L_name = record.last_name
+        address = record.address
+        prop_size = record.property_size
+
+        if cust_name != uniq_customer
+            add cust_name to uniq_customer
+            Write record to merge_file
+        endif
+    endwhile
+
+    close Geraldine_file
+    close Gerard_file
+    close merge_file
+    
+
+END
